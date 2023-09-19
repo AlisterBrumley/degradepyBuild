@@ -1,3 +1,4 @@
 ffmpegbuild/
 qddbuild/
 .DS_Store
+*.tar.xz
