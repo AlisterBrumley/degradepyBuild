@@ -4,19 +4,22 @@
 ## and packs them for a release version
 ## that is ready to upload to github
 
+## should be in ~/Documents/prog/degradepy/degradepyBuild/scripts
+## and run from ~/Documents/prog/degradepy/degradepyBuild
+
 # var set
 os=$(uname -s)
 
 # top level locations
-prog="$HOME/Documents/prog" # not sure if i need this?
-degradepy="$prog/degradepy" # first step is to be here, this is the project file
-degradepyBuild="$degradepy/degradepyBuild" # 2nd setp here? root of the whole build, everything should happen under here
+prog="$HOME/Documents/prog" 
+degradepy="$prog/degradepy"
+degradepyBuild="$degradepy/degradepyBuild"
 scripts="$degradepyBuild/scripts"
 
 # qdd locations
-qddBuild="$degradepyBuild/qddBuild" # where qdd git ends up, root of qdd build
-pyinst="$qddBuild/pyinst" # 
-pyinst_ffmpeg="$pyinst/ffmpeg" #
+qddBuild="$degradepyBuild/qddBuild"
+pyinst="$qddBuild/pyinst"
+pyinst_ffmpeg="$pyinst/ffmpeg"
 dist="$pyinst/dist-$os"
 
 # ffmpeg locations
@@ -67,7 +70,7 @@ fi
 gh repo clone AstaBrum/degradepy $qddBuild
 cd $qddBuild
 # removing files that dont need
-rm -rf .* *.md qddegrade.py
+rm -rf .git* .readme_img README.md qddegrade.py
 
 # moving files for build
 mv $qddBuild/deghelpers.py \
@@ -102,7 +105,6 @@ esac
 # creating release package
 echo " ----- PACKING QDD ----- "
 mv $pyinst/readme.txt $dist
-mv $degradepy/*.dmg $degradepy/backups
 case $os in
     "Darwin")
         hdiutil create \

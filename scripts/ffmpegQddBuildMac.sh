@@ -1,11 +1,17 @@
 #! /bin/sh
-## Builds minimal FFMPEG for QDD
+
+## Builds minimal FFMPEG for QDD for macOS
+
+## TODO: MAKE CROSS PLATFORM? AT LEAST FOR LINUX?
+
+## should be in ~/Documents/prog/degradepy/degradepyBuild/scripts
+## and run from ~/Documents/prog/degradepy/degradepyBuild
 
 # var sets
 macos_min_compat="10.10"
 
 # location var set
-prog="$HOME/Documents/prog" # not sure if i need this?
+prog="$HOME/Documents/prog"
 degradepy="$prog/degradepy"
 degradepyBuild="$degradepy/degradepyBuild"
 ffmpegBuild="$degradepyBuild/ffmpegBuild"
@@ -29,7 +35,7 @@ compat_flags="
 set -e
 
 # should be here, but making sure by setting
-cd $degradepyBuild
+#cd $degradepyBuild
 
 # gitting ffmpeg if required
 if [ ! -d $ffmpegBuild ]

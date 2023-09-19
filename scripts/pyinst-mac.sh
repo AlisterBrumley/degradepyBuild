@@ -3,6 +3,5 @@
 
 pyinstaller -w --clean --distpath ./dist-Darwin -n qdd --add-data "./ffmpeg/*:./ffmpeg/" --noconfirm qddinst.py
 
-# dont need these
-# rm -rf ./build
-# rm -rf ./dist-Darwin/qdd/
+rm -rf ./build
+rm -rf ./dist-Darwin/qdd/
