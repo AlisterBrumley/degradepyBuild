@@ -112,7 +112,7 @@ echo " ----- @ ${timenow} ------ " | tee -a $build_log
 
 echo "do you want to copy to win drive?"
 read win_yn
-if [ "$win_yn" != "${win_yn#[y]}"]
+if [ "$win_yn" != "${win_yn#[Yy]}" ]
 then
     echo "where to put?"
     read winCffmpegBuild
