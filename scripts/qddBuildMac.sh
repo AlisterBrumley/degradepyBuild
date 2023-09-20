@@ -110,9 +110,9 @@ esac
 
 # creating release package
 echo " ----- PACKING QDD ----- "
-mv $pyinst/readme.txt $dist
 case $os in
     "Darwin")
+        mv $pyinst/readme.txt $dist
         hdiutil create \
             -ov \
             -srcfolder $dist \
@@ -122,8 +122,9 @@ case $os in
     "Linux") echo "TODO zip linux"
     exit 11 ;;
     "Win")
-        7z a qdd_win_x86_64_$vnum.zip \
-        $dist \
+        mv $pyinst/readme.txt $dist/qdd
+        7z a $degradepy/qdd_win_x86_64_$vnum.zip \
+        $dist/qdd \
         && tput bel
 esac
 
