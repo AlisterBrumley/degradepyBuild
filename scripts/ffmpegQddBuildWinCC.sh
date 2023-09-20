@@ -8,7 +8,7 @@
 prog="$HOME/Documents/prog"
 degradepy="$prog/degradepy"
 degradepyBuild="$degradepy/degradepyBuild"
-ffmpegBuild="$degradepyBuild/ffmpegBuild"
+ffmpegBuild="$degradepyBuild/ffmpegBuildWin"
 build_log="$ffmpegBuild/ffqdd_build_log.txt"
 
 
