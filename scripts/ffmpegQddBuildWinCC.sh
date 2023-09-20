@@ -113,11 +113,13 @@ echo " ----- @ ${timenow} ------ " | tee -a $build_log
 echo "do you want to copy to win drive?"
 read win_yn
 if [ "$win_yn" != "${win_yn#[y]}"]
-echo "where to put?"
-read winCffmpegBuild
-cp $ffmpegBuild/ffmpeg \
-    $winCffmpegBuild
-cp $ffmpegBuild/ffprobe \
-    $winCffmpegBuild
-cp $ffmpegBuild/libwinpthread-1.dll \
-    $winCffmpegBuild
+then
+    echo "where to put?"
+    read winCffmpegBuild
+    cp $ffmpegBuild/ffmpeg \
+        $winCffmpegBuild
+    cp $ffmpegBuild/ffprobe \
+        $winCffmpegBuild
+    cp $ffmpegBuild/libwinpthread-1.dll \
+        $winCffmpegBuild
+fi
