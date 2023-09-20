@@ -93,7 +93,7 @@ timenow=$(date)
     --pkg-config-flags=--static \
     $cc_flags \
     $win_flags \
-    | tee -a $build_log
+    | tee $build_log
 
 
 # making

@@ -91,7 +91,7 @@ timenow=$(date)
     --disable-ffplay \
     --pkg-config-flags=--static \
     $compat_flags \
-    | tee -a $build_log
+    | tee $build_log
 
 
 # making
