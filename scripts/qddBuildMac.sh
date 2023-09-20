@@ -9,6 +9,10 @@
 
 # var set
 os=$(uname -s)
+if [ "$os" != "Linux" ] && [ "$os" != "Darwin" ]
+then
+    os="Win"
+fi
 
 # top level locations
 prog="$HOME/Documents/prog" 
@@ -48,7 +52,7 @@ then
         "Linux") echo "TODO build script linux"
         echo "exiting..."
         exit 11 ;;
-        MINGW64*) echo "requires cross compile, cannot build ffmpeg here!"
+        "Win") echo "requires cross compile, cannot build ffmpeg here!"
         echo "place ffmpeg.exe and ffprobe.ex in ffmpeg build"
         echo "exiting..."
         exit 12 ;;
@@ -97,7 +101,7 @@ case $os in
     "Linux") 
         $scripts/pyinst-linux.sh && tput bel
     ;;
-    MINGW64*)
+    "Win")
         cp $ffmpegBuild/libwinpthread-1.dll \
         $pyinst_ffmpeg 
         $scripts/pyinst-win.sh && tput bel
@@ -117,7 +121,7 @@ case $os in
     ;;
     "Linux") echo "TODO zip linux"
     exit 11 ;;
-    MINGW64*) echo "TODO zip win"
+    "Win") echo "TODO zip win"
     #exit 12 ;;
 esac
 
