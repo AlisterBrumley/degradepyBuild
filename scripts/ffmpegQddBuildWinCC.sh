@@ -100,9 +100,12 @@ timenow=$(date)
 echo " ----- MAKING FFMPEG ----- "
 make && tput bel
 
+# copying lib that cant be built
+cp /usr/x86_64-w64-mingw32/sys-root/mingw/bin/libwinpthread-1.dll $ffmpegBuildWin
+
 # writing to log
 timenow=$(date)
 echo " ----- MADE FFMPEG ----- " | tee -a $build_log
 echo " ----- @ ${timenow} ------ " | tee -a $build_log
 # testing
-./ffmpeg -version | tee -a $build_log
+./ffmpeg.exe -version | tee -a $build_log
