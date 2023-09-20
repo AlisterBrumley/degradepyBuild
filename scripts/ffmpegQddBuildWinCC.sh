@@ -10,6 +10,7 @@ degradepy="$prog/degradepy"
 degradepyBuild="$degradepy/degradepyBuild"
 ffmpegBuild="$degradepyBuild/ffmpegBuildWin"
 build_log="$ffmpegBuild/ffqdd_build_log.txt"
+winCffmpegBuild="/ntfs/winc/$degradepy/ffmpegBuild"
 
 
 # configure settings
@@ -109,3 +110,11 @@ echo " ----- MADE FFMPEG ----- " | tee -a $build_log
 echo " ----- @ ${timenow} ------ " | tee -a $build_log
 # testing
 ./ffmpeg.exe -version | tee -a $build_log
+
+echo " ----- COPY TO WINDOWS PARTITION ----- "
+cp $ffmpegBuild/ffmpeg \
+    $winCffmpegBuild
+cp $ffmpegBuild/ffprobe \
+    $winCffmpegBuild
+cp $ffmpegBuild/libwinpthread-1.dll \
+    $winCffmpegBuild
