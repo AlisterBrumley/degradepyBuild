@@ -122,4 +122,6 @@ then
         $winCffmpegBuild
     cp $ffmpegBuild/libwinpthread-1.dll \
         $winCffmpegBuild
+    cp $ffmpegBuild/ffqdd_build_log.txt \
+        $winCffmpegBuild
 fi
