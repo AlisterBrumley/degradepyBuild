@@ -97,7 +97,9 @@ case $os in
     "Linux") 
         $scripts/pyinst-linux.sh && tput bel
     ;;
-    MINGW64*) 
+    MINGW64*)
+        cp $ffmpegBuild/libwinpthread-1.dll \
+        $pyinst_ffmpeg 
         $scripts/pyinst-win.sh && tput bel
     ;;
 esac
