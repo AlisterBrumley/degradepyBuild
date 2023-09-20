@@ -48,7 +48,7 @@ then
         "Linux") echo "TODO build script linux"
         echo "exiting..."
         exit 11 ;;
-        "Win32") echo "requires cross compile, cannot build ffmpeg here!"
+        MINGW64*) echo "requires cross compile, cannot build ffmpeg here!"
         echo "place ffmpeg.exe and ffprobe.ex in ffmpeg build"
         echo "exiting..."
         exit 12 ;;
@@ -97,7 +97,7 @@ case $os in
     "Linux") 
         $scripts/pyinst-linux.sh && tput bel
     ;;
-    "Win32") 
+    MINGW64*) 
         $scripts/pyinst-win.sh && tput bel
     ;;
 esac
@@ -116,7 +116,7 @@ case $os in
     "Linux") echo "TODO zip linux"
     exit 11 ;;
     "Win32") echo "TODO zip win"
-    exit 12 ;;
+    #exit 12 ;;
 esac
 
 timenow=$(date)
