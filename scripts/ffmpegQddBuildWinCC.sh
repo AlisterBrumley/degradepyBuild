@@ -116,9 +116,9 @@ if [ "$win_yn" != "${win_yn#[Yy]}" ]
 then
     echo "where to put?"
     read winCffmpegBuild
-    cp $ffmpegBuild/ffmpeg \
+    cp $ffmpegBuild/ffmpeg.exe \
         $winCffmpegBuild
-    cp $ffmpegBuild/ffprobe \
+    cp $ffmpegBuild/ffprobe.exe \
         $winCffmpegBuild
     cp $ffmpegBuild/libwinpthread-1.dll \
         $winCffmpegBuild
