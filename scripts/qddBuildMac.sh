@@ -117,7 +117,7 @@ case $os in
     ;;
     "Linux") echo "TODO zip linux"
     exit 11 ;;
-    "Win32") echo "TODO zip win"
+    MINGW64*) echo "TODO zip win"
     #exit 12 ;;
 esac
 
