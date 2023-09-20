@@ -121,8 +121,10 @@ case $os in
     ;;
     "Linux") echo "TODO zip linux"
     exit 11 ;;
-    "Win") echo "TODO zip win"
-    #exit 12 ;;
+    "Win")
+        7z a qdd_win_x86_64_$vnum.zip \
+        $dist \
+        && tput bel
 esac
 
 timenow=$(date)
