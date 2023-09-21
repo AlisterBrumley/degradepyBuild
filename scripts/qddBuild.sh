@@ -68,7 +68,6 @@ if [ -d $qddBuild ]
 then
     rm -rf $pyinst # have to do this because it throws a permission denied on next (but still does it?)
     rm -rf $qddBuild
-
 fi
 gh repo clone AstaBrum/degradepy $qddBuild
 cd $qddBuild
@@ -118,8 +117,12 @@ case $os in
             -volname "qdd $vnum" $degradepy/qdd_mac_x86_64_$vnum.dmg \
             && tput bel
     ;;
-    "Linux") echo "TODO zip linux"
-    exit 11 ;;
+    "Linux")
+        mv $pyinst/readme.txt $dist
+        tar -cJf \
+            $degradepy/qdd_lin_x86_64_$vnum.tar.xz \
+            $dist
+    ;;
     "Win")
         mv $pyinst/readme.txt $dist/qdd
         7z a $degradepy/qdd_win_x86_64_$vnum.zip \
