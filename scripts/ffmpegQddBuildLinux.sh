@@ -27,10 +27,6 @@ enable_components="
 --enable-protocol=file,pipe
 --enable-filter=aresample"
 
-compat_flags="
---extra-cflags="-mmacosx-version-min=${macos_min_compat}"
---extra-ldflags="-mmacosx-version-min=${macos_min_compat}""
-
 
 # sets to stop when something errors
 set -e
@@ -91,7 +87,6 @@ timenow=$(date)
     --disable-sdl2 \
     --disable-ffplay \
     --pkg-config-flags=--static \
-    $compat_flags \
     | tee $build_log
 
 

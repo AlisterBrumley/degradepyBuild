@@ -49,9 +49,8 @@ then
     case $os in
         "Darwin") $scripts/ffmpegQddBuildMac.sh
         ;;
-        "Linux") echo "TODO build script linux"
-        echo "exiting..."
-        exit 11 ;;
+        "Linux") $scripts/ffmpegQddBuildLinux.sh
+        ;;
         "Win") echo "requires cross compile, cannot build ffmpeg here!"
         echo "place ffmpeg.exe and ffprobe.ex in ffmpeg build"
         echo "exiting..."
