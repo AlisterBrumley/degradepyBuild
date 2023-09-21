@@ -121,7 +121,7 @@ case $os in
         mv $pyinst/readme.txt $dist
         tar -cJf \
             $degradepy/qdd_lin_x86_64_$vnum.tar.xz \
-            $dist
+            basename $dist
     ;;
     "Win")
         mv $pyinst/readme.txt $dist/qdd
